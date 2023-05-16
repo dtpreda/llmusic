@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LLMusic</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="flex flex-col m-2">
+            <div class="flex rounded bg-black text-white p-2 items-center">
+                <h1 class="text-3xl font-bold">LL</h1>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+                </svg>                  
+                <h1 class="text-3xl font-bold">Music</h1>
+            </div>
+            <div class="flex flex-col md:flex-row md:space-x-2">
+                <div class="flex flex-col my-2 w-full md:w-3/4">
+                    <p>LLMusic is a music player.</p>
+                    <p>What kind of feeling do you want your playlist to have?</p>
+                    <div class="flex my-2 w-full" class="border rounded">
+                        <input class="flex-grow border rounded-l p-2" type="text" id="search" placeholder="A midnight stroll in New York...">
+                    </div>
+                    <span>Any extra requirements?</span>
+                    <div class="flex my-2 w-full" class="border rounded">
+                        <input class="flex-grow border rounded-l p-2" type="text" id="requirements" placeholder="All songs should be from 20s...">
+                    </div>
+                    <span>How many songs are you looking for?</span>
+                    <div class="flex mt-2 w-full" class="border rounded">
+                        <input class="flex-grow border rounded-l p-2" type="number" id="song-count" placeholder="1-25" min=1 max=25>
+                    </div>
+                </div>
+                <div class="flex my-2 w-full md:w-1/4" id="spotify-wrapper">
+                    <button class=" flex items-center space-x-1 justify-center w-full bg-green-400 rounded p-2" id="login">
+                        <svg id="spotify-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                            <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                        </svg>
+                        <span>Login</span>
+                    </button>
+                </div>
+            </div>
+            <div id="playlist-wrapper" class="flex flex-col w-full bg-black p-1 space-y-1">
+            </div>
+            <div class="flex my-2 w-full h-16">
+                <button class=" flex items-center space-x-1 justify-center w-full bg-green-400 rounded p-2" id="save-playlist">
+                    <svg id="spotify-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                        <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                    </svg>
+                    <span>Save Current Playlist</span>
+                </button>
+            </div>
+            <div>
+                <p id="result"></p>
+            </div>
+            
+        </div>
+
+        <script type="module" src="./you.js"></script>
+        <script type="module" src="./auth.js"></script>
+        <script type="module" src="./playlist.js"></script>
+    </body>
+</html>
